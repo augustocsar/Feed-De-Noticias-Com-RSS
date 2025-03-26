@@ -1,0 +1,35 @@
+services:
+  app:
+    # Cria a imagem no diretório atual
+    build: .
+
+    # Mapeia a porta do container e do host
+    ports:
+      - "3000:3000"
+    
+    # Carrega as variáveis de ambiente
+    env_file:  
+      - .env    
+    
+    # Define as variáveis de ambiente da AWS
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+      - AWS_REGION=${AWS_REGION}
+      - S3_BUCKET=${S3_BUCKET}
+      - PORT=${PORT}
+      - RSS_URL=${RSS_URL}
+
+    volumes:
+      # Sincroniza o diretório do host com o do container
+      - .:/app
+
+      # Persiste os módulos do node dentro do container, evitando conflitos com o host
+      - /app/node_modules
+
+    # Define o diretório de trabalho dentro do container
+    working_dir: /app
+
+    # Roda a aplicação ao iniciar o container 
+    command: node src/server.js
