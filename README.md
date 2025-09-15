@@ -104,9 +104,7 @@ Nota: Clonando o repositório, é necessário preencher as credênciais no ``.en
 
 ---
 
-# 🧑‍💻 Autores
+# 🧑‍💻 Autor
 
 - [Augusto César Farias Carvalho](https://github.com/augustocsar)
-- [Hugo Torres Moreira](https://github.com/WolfShizu)
-- [João Pedro santos prado](https://github.com/oustyy)
-- [João Vitor Vieira Santos](https://github.com/Jotavsts)
+
